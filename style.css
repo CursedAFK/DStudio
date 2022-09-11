@@ -1,0 +1,440 @@
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+/* Not Desktop Supported */
+.mobile {
+  display: none;
+}
+
+/* Mobile Screens Only */
+@media screen and (max-width: 576px) {
+  /* All Mobile Styling */
+  .mobile {
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  /* All Page 1 Styling */
+  .page-1 {
+    min-height: 100vh;
+    display: block;
+    padding: 1rem 1.5rem;
+    background: radial-gradient(circle at 110%, #ee9878 50%, #67c6ef 110%);
+    transition: 1s;
+  }
+
+  .page-1 header {
+    display: flex;
+    align-items: center;
+    min-height: 8vh;
+    position: relative;
+  }
+
+  .page-1 .menu-btn {
+    font-size: 2.5rem;
+    font-weight: 300;
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.5s;
+    top: 0;
+    right: 6%;
+    z-index: 2;
+  }
+
+  .page-1 .side-bar {
+    background: radial-gradient(
+      circle at 110%,
+      rgba(238, 152, 120, 0.6) 10%,
+      rgba(103, 198, 239, 0.6) 400%
+    );
+    backdrop-filter: blur(8px);
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    bottom: 0;
+    left: 110%;
+    right: 0;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 4rem 1rem 0;
+    transition: all 0.5s;
+  }
+
+  .page-1-1::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .page-1 .side-bar.togg {
+    left: 70%;
+  }
+
+  .page-1 .side-bar li {
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+
+  .page-1 .side-bar li a {
+    position: relative;
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .page-1 .side-bar li a.current::before {
+    content: ">";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -0.8rem;
+    font-size: 1.2rem;
+  }
+
+  .page-1 .side-bar li a::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 2px;
+    width: 0;
+    bottom: -0.05rem;
+    border-radius: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s;
+  }
+
+  .page-1 .side-bar li a:hover::after {
+    width: 100%;
+  }
+
+  .page-1 section {
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    justify-content: space-between;
+  }
+
+  .page-1 section h5 {
+    font-size: 0.8rem;
+    position: relative;
+    font-weight: 600;
+  }
+
+  .page-1 section h5::after {
+    content: "";
+    height: 2px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: black;
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    transform: translateX(-50%);
+  }
+
+  .page-1 section .abt {
+    padding-top: 0.7rem;
+  }
+
+  .page-1 section h1 {
+    font-size: 1.6rem;
+  }
+
+  .page-1 main {
+    padding-top: 1.2rem;
+    display: flex;
+    min-height: 30vh;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .page-1 main div {
+    display: flex;
+    min-width: 86vw;
+    justify-content: space-between;
+    font-weight: 500;
+  }
+
+  .page-1 main div p {
+    position: relative;
+  }
+
+  .page-1 main div .ba::after {
+    content: "International";
+    position: absolute;
+    font-size: 0.5rem;
+    left: 50%;
+    bottom: -4px;
+  }
+
+  .page-1 main div .sm::after {
+    content: "Strom gibt Gas";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    font-size: 0.3rem;
+  }
+
+  .page-1 button {
+    border: none;
+    font-size: 0.7rem;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+  }
+
+  .page-1 main > h3 {
+    font-size: 1.1rem;
+  }
+
+  .page-1 > h5 {
+    font-weight: 400;
+    padding-top: 0.2rem;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  .page-1 aside {
+    position: relative;
+    min-width: 86vw;
+  }
+
+  .page-1 aside video {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+
+  .page-1 aside img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    height: 6rem;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  .page-1 aside .pla {
+    opacity: 0;
+  }
+
+  .page-1 aside.ass::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    bottom: 0.4rem;
+    left: 0;
+    right: 0;
+  }
+
+  /* All Page 2 Styling */
+  .page-2 {
+    min-height: 100vh;
+    padding: 1rem 1.5rem;
+    background: radial-gradient(circle at -110%, #ee9878 50%, #67c6ef 110%);
+    transition: 1s;
+  }
+
+  .page-2-1::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .page-2 header {
+    display: flex;
+    align-items: center;
+    min-height: 8vh;
+    position: relative;
+  }
+
+  .page-2 .menu-btn {
+    font-size: 2.3rem;
+    font-weight: 300;
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.5s;
+    top: 0;
+    right: 6%;
+    z-index: 2;
+  }
+
+  .page-2 .side-bar {
+    background: radial-gradient(
+      circle at -110%,
+      rgba(238, 152, 120, 0.6) 10%,
+      rgba(103, 198, 239, 0.6) 400%
+    );
+    backdrop-filter: blur(8px);
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    bottom: 0;
+    left: 110%;
+    right: 0;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 4rem 1rem 0;
+    transition: all 0.5s;
+  }
+
+  .page-2-1::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .page-2 .side-bar.togg {
+    left: 70%;
+  }
+
+  .page-2 .side-bar li {
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+
+  .page-2 .side-bar li a {
+    position: relative;
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .page-2 .side-bar li a.current::before {
+    content: ">";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -0.8rem;
+    font-size: 1.2rem;
+  }
+
+  .page-2 .side-bar li a::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 2px;
+    width: 0;
+    bottom: -0.05rem;
+    border-radius: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s;
+  }
+
+  .page-2 .side-bar li a:hover::after {
+    width: 100%;
+  }
+
+  .page-2 section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .page-2 section .container:not(:last-child) {
+    padding-bottom: 1rem;
+  }
+
+  .page-2 section .container h3 {
+    position: relative;
+    font-weight: 400;
+    cursor: pointer;
+  }
+
+  .page-2 section .container.active h3 {
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+
+  .page-2 section .container .content h5 {
+    font-weight: 400;
+  }
+
+  .page-2 section .container h3::after {
+    content: ">";
+    position: absolute;
+    font-weight: 300;
+    font-size: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1%;
+  }
+
+  .page-2 section .container.active h3::after {
+    content: "^";
+    font-size: 1.2rem;
+  }
+
+  .page-2 section .container .content {
+    padding-top: 0.8rem;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+  .page-2 section .container.active .content {
+    transition: 0.5s;
+    height: 112px;
+  }
+
+  .page-2 section .container .content h5 {
+    padding-bottom: 0.8rem;
+    position: relative;
+  }
+
+  .page-2 section .container .content h5::before {
+    content: "^";
+    position: absolute;
+    right: 1.5rem;
+    transform: rotate(45deg);
+    opacity: 0.8;
+  }
+
+  .page-2 section .container .content h5::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.03);
+    bottom: 0.3rem;
+    left: 0;
+  }
+
+  .page-2 footer {
+    padding-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .page-2 footer h5 {
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.7);
+  }
+}
